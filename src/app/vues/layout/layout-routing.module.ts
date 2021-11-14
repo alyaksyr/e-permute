@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path:'', component: LayoutComponent, children:[
       {path:'', redirectTo:'/home', pathMatch:'full'},
-      {path:'home',loadChildren:'../accueil/accueil.module#AccueilModule'}
+      {path:'home',loadChildren:() => import('../accueil/accueil.module').then(m => m.AccueilModule)}
     ]
   }
 ];
