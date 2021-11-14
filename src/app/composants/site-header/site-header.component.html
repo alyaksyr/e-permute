@@ -1,0 +1,105 @@
+<div class="header shadow-sm mb-2 bg-body rounded">
+    <nav class="navbar navbar-expand-lg navbar-light bg-vert" >
+      <div class="container">
+        <!-- <div class="navbar-header"> -->
+        <a routerLink="/" class="navbar-brand" type="button"><b>E</b>-<b>Permute</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" ata-bs-target="#navbarMenuContent" aria-controls="navbarMenuContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- </div> -->
+  
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarMenuContent">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">Accueil </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/demande">Avis de permutation</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/faq" class="nav-link">Faq</a>
+            </li>
+            <li class="divider">|</li>
+            <li class="nav-item">
+                <a routerLink="/dashboard" class="btn btn-default btn-flat bg-warning" role="button" aria-pressed="true">
+                    Faire une demande de permutation
+                </a>
+              </li>
+          </ul> 
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+        <!-- /.navbar-collapse -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearchMenu" aria-expanded="false" aria-controls="collapseSearchMenu">
+                <fa-icon [icon]="faSearch"></fa-icon>
+            </button>
+        </div>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <div class="dropdown" *ngIf="isAuth">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/assets/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                    <sup class="badge badge-warning">10</sup>
+                </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <!-- User Account Menu -->
+                <li class="user-menu">
+                  <!-- Menu Toggle Button -->
+                  <a routerLink="/" class="dropdown-item">
+                    Alexander Pierce
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="user-menu">
+                    <a routerLink="/" class="dropdown-item">Paramètres</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="user-menu">
+                    <a routerLink="/" class="dropdown-item">Mes Demandes</a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="user-menu">
+                    <a href="" class="dropdown-item">
+                      <i class="fa fa-envelope-o"></i>
+                      <span>Messages</span>
+                      <sup class="badge badge-success">4</sup>
+                    </a>
+                </li>
+                <li class="user-menu">
+                    <a href="" class="dropdown-item">
+                      <i class="fa fa-bell-o"></i>
+                      <span>Notifications</span>
+                      <sup class="badge badge-warning">10</sup>
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li class="user-menu">
+                    <a routerLink="/" class="btn btn-default btn-flat dropdown-item">Déconnexion</a>
+                  </li>
+              </ul>
+            </div>
+          <ul class="navbar-nav mr-auto mt-2 sr-only mt-lg-0" *ngIf="!isAuth">
+            <li class="nav-item">
+              <a routerLink="/auth/connexion" class="btn active btn-flat bg-primarire" role="button" aria-pressed="true">
+                Se connecter
+              </a>
+            </li>&nbsp;
+            <li class="nav-item">
+              <a routerLink="/auth/inscription" routerLinkActive="active" class="btn btn-outline-success btn-flat" role="button" aria-pressed="true">
+                S'inscrire
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <div class="collapse collapse-horizontal" id="collapseSearchMenu" style="height: 120px; background-color: blue;">
+
+    </div>
+  </div>
+  
