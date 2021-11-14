@@ -8,10 +8,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes,{
-    enableTracing:false,
-    scrollPositionRestoration:'top',
-    onSameUrlNavigation: 'reload'
-  })],
+    enableTracing: false,
+    scrollPositionRestoration: 'top',
+    onSameUrlNavigation: 'reload',
+    relativeLinkResolution: 'legacy'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
