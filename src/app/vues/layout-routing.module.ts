@@ -7,7 +7,9 @@ const routes: Routes = [
   {
     path:'',component:LayoutComponent,children:[
       {path:'',redirectTo:'/home',pathMatch:'full'},
-      {path:'home',loadChildren:() => import('../vues/accueil/accueil.module').then(m => m.AccueilModule)},
+      {path:'home',loadChildren:() => import('./accueil/accueil.module').then(m => m.AccueilModule)},
+      {path:'demandes',loadChildren:() => import('./demandes/demandes.module').then(m => m.DemandesModule)},
+      {path:'faq',loadChildren:() => import('./faq/faq.module').then(m => m.FaqModule)},
       {path:'auth',loadChildren:() => import('../vues/auth/auth.module').then(m => m.AuthModule)},
       {path:'compte',canActivate:[AuthGuardService],loadChildren:() => import('../vues/compte/compte.module').then(m => m.CompteModule)}
     ]
