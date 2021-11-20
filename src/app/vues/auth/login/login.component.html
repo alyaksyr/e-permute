@@ -1,1 +1,32 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="loginForm">
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Email ou mobile" formControlName="login">
+      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    </div>
+    <div class="form-group has-feedback">
+      <input type="password" class="form-control" placeholder="Mot de passe" formControlName="password">
+      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+    </div>
+  
+    <div class="row">
+      <div class="col-12 col-lg-7">
+        <div class="form-group">
+          <div class="form-check">
+            <span class="form-check-input input-check">
+              <span class="input-check-body">
+                <input type="checkbox" class="check-input" id="resteConnecte" formControlName="resteConnecte">
+              </span>
+            </span>
+            <label class="form-check-label" for="resteConnecte">Resté connecté !</label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-12 col-lg-5">
+        <button type="submit" class="btn bg-primarire btn-block btn-flat">Connexion</button>
+      </div>
+      <div class="col-12">
+        <a routerLink="/auth/set-new-password">Problème d'identification</a>
+      </div>
+    </div>
+  </form>

@@ -22,8 +22,8 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  login(login: string, password: string) {
-    return this.http.post<any>(`${AppConfig.apiUrl}/auth/login`, { login, password })
+  login(mobile: string, password: string) {
+    return this.http.post<any>(`${AppConfig.apiUrl}auth/login`, { mobile, password })
       .pipe(tap(value => {
         if (value && value.data.token) {
           localStorage.setItem('USER', JSON.stringify(value.data.user));

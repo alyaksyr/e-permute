@@ -43,7 +43,7 @@ export class VerifTokenService {
   }
 
   getUserData(): any{
-    return JSON.parse(localStorage.getItem('USER'));
+    return JSON.stringify(localStorage.getItem('USER'));
   }
 
   getUserRole(){
