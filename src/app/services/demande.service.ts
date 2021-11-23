@@ -11,7 +11,8 @@ import { AppConfig } from '../parametres/app-config';
 })
 export class DemandeService {
 
-  demande_URL = AppConfig.apiUrl+'demandes/list_demande';
+  demande_URL = AppConfig.apiUrl+'demandes';
+  demande_Liste_URL = AppConfig.apiUrl+'demandes/list_demande';
     token = '';//JSON.parse(localStorage.getItem('currentUser')).token;
     headers = new HttpHeaders({
       'Content-Type':'application/json',
@@ -24,7 +25,7 @@ export class DemandeService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Resultat<Demande>>{
-    return this.http.get<Resultat<Demande>>(this.demande_URL)
+    return this.http.get<Resultat<Demande>>(this.demande_Liste_URL)
     .pipe(
       tap(res => {
         this.all_elements$.next(res);
